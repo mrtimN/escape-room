@@ -1,3 +1,5 @@
+from objects import object_relations
+
 def linebreak():
     """
     Print a line break
