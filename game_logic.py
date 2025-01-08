@@ -1,3 +1,4 @@
+import game_state
 from objects import object_relations
 
 def linebreak():
