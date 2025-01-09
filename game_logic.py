@@ -98,7 +98,7 @@ def examine_item(game_state, item_name):
                 else:
                     output += "It is locked but you don't have the key."
 
-            # Using an elif function we output a message if an specific item is examined
+            # Using an elif function we output a message if a specific item is examined
 
             elif(item["name"] == "poster 1"):
                 output += "You see an image of a beautiful grand piano"
@@ -106,11 +106,11 @@ def examine_item(game_state, item_name):
             elif(item["name"] == "poster 2"):
                 output += "You see a portrait of Elizabeth II"
 
-            elif(item["name"] == "poster 3"):
-                output += "You see an image of a beautiful grand piano"
+            elif(item["name"] == "note on the floor"):
+                output += "You unfold the note, and it reads 'A place for two, when the day is through'"
 
             elif(item["name"] == "poster 4"):
-                output += "You see an image of a beautiful grand piano"
+                output += "You see an image of a close-up of an open drawer with folded clothes inside."
 
             else:
                 if(item["name"] in object_relations and len(object_relations[item["name"]])>0):

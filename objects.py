@@ -40,8 +40,8 @@ poster_2 = {
   "type": "furniture",
 }
 
-poster_3 = {
-  "name": "poster 3",
+note_on_the_floor = {
+  "name": "note on the floor",
   "type": "furniture",
 }
 
@@ -133,7 +133,7 @@ all_keys = [key_a, key_b, key_c, key_d]
 # define which items/rooms are related
 
 object_relations = {
-    "game room": [couch, piano, door_a, poster_1],
+    "game room": [couch, piano, door_a, poster_1, poster_2, note_on_the_floor, poster_4],
     "piano": [key_a],
     "outside": [door_d],
     "door a": [game_room, bedroom_1],
@@ -146,5 +146,4 @@ object_relations = {
     "queen bed": [key_b],
     "double bed": [key_c],
     "dresser": [key_d],
-    "poster_1": [piano],
 }
