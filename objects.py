@@ -133,7 +133,7 @@ all_keys = [key_a, key_b, key_c, key_d]
 # define which items/rooms are related
 
 object_relations = {
-    "game room": [couch, piano, door_a, poster_1, hint_game_room],
+    "game room": [couch, piano, door_a, poster_1],
     "piano": [key_a],
     "outside": [door_d],
     "door a": [game_room, bedroom_1],
