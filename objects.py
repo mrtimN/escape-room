@@ -21,10 +21,10 @@ key_b = {"name": "key for door b", "type": "key", "target": door_b}
 key_c = {"name": "key for door c", "type": "key", "target": door_c}
 key_d = {"name": "key for door d", "type": "key", "target": door_d}
 
-game_room = {"name": "game room", "type": "room", "explored" : False}
-bedroom_1 = {"name": "bedroom 1", "type": "room", "explored" : False}
-bedroom_2 = {"name": "bedroom 2", "type": "room", "explored" : False}
-living_room = {"name": "living room", "type": "room", "explored" : False}
+game_room = {"name": "game room", "type": "room", "explored": False}
+bedroom_1 = {"name": "bedroom 1", "type": "room", "explored": False}
+bedroom_2 = {"name": "bedroom 2", "type": "room", "explored": False}
+living_room = {"name": "living room", "type": "room", "explored": False}
 outside = {"name": "outside"}
 
 all_furniture = [couch, piano, queen_bed, double_bed, dresser, dining_table, poster_1]
