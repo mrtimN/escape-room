@@ -1,4 +1,3 @@
-import game_state
 from objects import object_relations
 
 def linebreak():
@@ -7,16 +6,19 @@ def linebreak():
     """
     print("\n\n")
 
-def start_game():
+def start_game(game_state):
+    print("---DEBUG---")
+    print(game_state["current_room"])
     """
     Start the game
     """
     print("You wake up on a couch and find yourself in a strange house with no windows which you have never been to before.")
     print("You don't remember why you are here and what had happened before.")
     print("You feel some unknown danger is approaching and you must get out of the house, NOW!")
-    play_room(game_state["current_room"])
+    play_room(game_state, game_state["current_room"])
+    print("yeah")
 
-def play_room(room):
+def play_room(game_state, room):
     """
     Play a room. First check if the room being played is the target room.
     If it is, the game will end with success. Otherwise, let player either
@@ -32,17 +34,17 @@ def play_room(room):
 
         if intended_action == "explore":
             explore_room(room)
-            play_room(room)
+            play_room(game_state, room)
         elif intended_action == "examine":
             # check if the room has been explored or not
             if room["explored"] == True:
-              examine_item(input("What would you like to examine?").strip())
+              examine_item(game_state, input("What would you like to examine?").strip())
             else:
               print("Do you know what's inside the room?")
-              play_room(room)
+              play_room(game_state, room)
         else:
             print("Not sure what you mean. Type 'explore' or 'examine'.")
-            play_room(room)
+            play_room(game_state, room)
         linebreak()
 
 def explore_room(room):
@@ -64,7 +66,7 @@ def get_next_room_of_door(door, current_room):
         if(not current_room == room):
             return room
 
-def examine_item(item_name):
+def examine_item(game_state, item_name):
     """
     Examine an item which can be a door or furniture.
     First make sure the intended item belongs to the current room.
@@ -124,6 +126,6 @@ def examine_item(item_name):
         print("The item you requested is not found in the current room.")
 
     if(next_room and input("Do you want to go to the next room? Enter 'yes' or 'no'").strip() == 'yes'):
-        play_room(next_room)
+        play_room(game_state, next_room)
     else:
-        play_room(current_room)
+        play_room(game_state, current_room)
