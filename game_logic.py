@@ -14,7 +14,6 @@ def start_game(game_state):
     print("You don't remember why you are here and what had happened before.")
     print("You feel some unknown danger is approaching and you must get out of the house, NOW!")
     play_room(game_state, game_state["current_room"])
-    print("yeah")
 
 def play_room(game_state, room):
     """
