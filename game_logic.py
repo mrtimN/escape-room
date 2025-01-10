@@ -7,8 +7,6 @@ def linebreak():
     print("\n\n")
 
 def start_game(game_state):
-    print("---DEBUG---")
-    print(game_state["current_room"])
     """
     Start the game
     """
@@ -36,10 +34,13 @@ def play_room(game_state, room):
             explore_room(room)
             play_room(game_state, room)
         elif intended_action == "examine":
+
             # check if the room has been explored or not
             if room["explored"] == True:
               examine_item(game_state, input("What would you like to examine?").strip())
             else:
+              # message to user, when he has not explored the room
+
               print("Do you know what's inside the room?")
               play_room(game_state, room)
         else:
@@ -52,6 +53,7 @@ def explore_room(room):
     Explore a room. List all items belonging to this room.
     """
     items = [i["name"] for i in object_relations[room["name"]]]
+
     # set the current rooms state "explored" to True, when it has been explored
     room["explored"] = True
     print("You explore the room. This is " + room["name"] + ". You find " + ", ".join(items))
@@ -61,10 +63,8 @@ def get_next_room_of_door(door, current_room):
     From object_relations, find the two rooms connected to the given door.
     Return the room that is not the current_room.
     """
-    connected_rooms = object_relations[door["name"]]
-    for room in connected_rooms:
-        if(not current_room == room):
-            return room
+    return [room for room in object_relations[door["name"]] if room != current_room][0]
+
 
 def examine_item(game_state, item_name):
     """
