@@ -37,12 +37,12 @@ all_keys = [key_a, key_b, key_c, key_d]
 # define which items/rooms are related
 
 object_relations = {
-    "game room": [couch, piano, door_a, poster_1, poster_2, note_on_the_floor, poster_4],
+    "game room": [couch, piano, door_a, poster_1,],
     "piano": [key_a],
     "outside": [door_d],
     "door a": [game_room, bedroom_1],
-    "bedroom 1": [queen_bed,door_a,door_b,door_c],
-    "bedroom 2": [door_b, double_bed, dresser],
+    "bedroom 1": [queen_bed,door_a,door_b,door_c, poster_2],
+    "bedroom 2": [door_b, double_bed, dresser, note_on_the_floor, poster_4],
     "living room": [dining_table,door_c,door_d],
     "door b": [bedroom_1, bedroom_2],
     "door c": [bedroom_1, living_room],
